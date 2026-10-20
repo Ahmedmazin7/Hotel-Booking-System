@@ -1,0 +1,221 @@
+/* Styles only used on Admin/dashboard.php */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+/* ---------- today's arrivals ---------- */
+
+.arrival {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 0;
+}
+
+.arrival-avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal-dark);
+  background: var(--teal-soft);
+  border-radius: 50%;
+}
+
+.arrival-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.arrival-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.arrival-meta {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* ---------- recent bookings table ---------- */
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 6px 8px;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+td {
+  padding: 9px 8px;
+  font-size: 13px;
+  white-space: nowrap;
+  border-top: 1px solid var(--line);
+}
+
+td.id {
+  color: var(--muted);
+}
+
+td.guest {
+  font-weight: 600;
+}
+
+/* ---------- room status ---------- */
+
+.room-bar {
+  display: flex;
+  gap: 4px;
+  height: 9px;
+  margin: 4px 0 14px;
+}
+
+.room-bar span {
+  border-radius: 999px;
+}
+
+.bar-occupied { background: var(--teal); }
+.bar-available { background: #bfe0db; }
+.bar-maintenance { background: #de6b5a; }
+
+.room-counts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.count-value {
+  display: block;
+  margin-top: 2px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ---------- stat cards ---------- */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.stat-card {
+  padding: 14px 16px;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 10px;
+  border-radius: 9px;
+}
+
+.stat-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.stat-icon.teal { background: var(--teal-soft); color: var(--teal); }
+.stat-icon.purple { background: #e6e1f7; color: #6d55c9; }
+.stat-icon.orange { background: #fbe6cc; color: #c26a12; }
+.stat-icon.blue { background: #dfe6fb; color: #3651b8; }
+
+.stat-value {
+  display: block;
+  margin-top: 2px;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* ---------- highlighted card ---------- */
+
+.attention {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  color: #fff;
+  background: linear-gradient(135deg, #167f76, #0d5c5a);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 22px rgba(14, 95, 90, 0.25);
+}
+
+.attention .small-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.attention h2 {
+  margin: 2px 0 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.btn-light {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal-dark);
+  text-decoration: none;
+  white-space: nowrap;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.btn-light:hover {
+  background: #eef7f6;
+}
+
+/* ---------- smaller screens ---------- */
+
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-grid {
+    gap: 12px;
+  }
+
+  .stat-value {
+    font-size: 22px;
+  }
+}

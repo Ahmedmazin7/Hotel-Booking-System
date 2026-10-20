@@ -1,0 +1,123 @@
+/* Styles only used on Admin/login.php */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 16px;
+  font-family: "Poppins", Arial, sans-serif;
+  color: #14302d;
+  background: linear-gradient(135deg, #c9e1de 0%, #dce9e7 50%, #dcd9ef 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 36px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  box-shadow: 0 30px 60px rgba(20, 60, 56, 0.12);
+}
+
+.brand {
+  margin: 0 0 24px;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.brand span {
+  font-weight: 400;
+  color: #127a72;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 4px 0 26px;
+  font-size: 15px;
+  text-align: center;
+  color: #5b6f6c;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #d6e4e2;
+  border-radius: 12px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #127a72;
+  box-shadow: 0 0 0 3px rgba(18, 122, 114, 0.15);
+}
+
+button {
+  width: 100%;
+  margin-top: 4px;
+  padding: 13px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #127a72;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(18, 122, 114, 0.25);
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0e5f5a;
+}
+
+.message {
+  margin: 0 0 18px;
+  padding: 11px 14px;
+  font-size: 14px;
+  border-radius: 12px;
+}
+
+.message.error {
+  color: #b4432f;
+  background: #fbe1dc;
+}
+
+.message.success {
+  color: #0e5f5a;
+  background: #d5ebe8;
+}
+
+.back-link {
+  display: block;
+  margin-top: 22px;
+  font-size: 14px;
+  text-align: center;
+  color: #127a72;
+  text-decoration: none;
+}

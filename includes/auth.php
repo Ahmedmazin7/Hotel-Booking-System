@@ -12,6 +12,18 @@ function require_admin() {
     }
 }
 
+// turn "Ahmed Ali" into "AA" for the round avatars
+function get_initials($name) {
+    $words = explode(' ', trim($name));
+    $initials = '';
+    foreach ($words as $word) {
+        if ($word != '') {
+            $initials .= strtoupper($word[0]);
+        }
+    }
+    return substr($initials, 0, 2);
+}
+
 // use this at the top of every guest page
 function require_guest() {
     if (!isset($_SESSION['guest_id'])) {

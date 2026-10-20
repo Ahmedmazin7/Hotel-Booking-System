@@ -56,11 +56,16 @@ if (isset($_POST['login'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin Log in · StayEase</title>
-  <link rel="stylesheet" href="/HMS-Project/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/HMS-Project/css/admin-login.css">
 </head>
 <body>
   <div class="card">
+    <p class="brand">Stay<span>Ease</span></p>
     <h1>Admin Log in</h1>
+    <p class="subtitle">Sign in to manage the hotel</p>
 
     <?php
     if ($error != "") {
@@ -80,6 +85,8 @@ if (isset($_POST['login'])) {
 
       <button type="submit" name="login">Log in</button>
     </form>
+
+    <a href="/HMS-Project/Guest/login.php" class="back-link">Go to guest site</a>
 
   </div>
 </body>
