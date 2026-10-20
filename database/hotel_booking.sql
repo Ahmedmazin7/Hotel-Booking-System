@@ -4,7 +4,7 @@
 CREATE DATABASE IF NOT EXISTS hotel_booking CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE hotel_booking;
 
--- Admins (log in with username)
+-- Admins (log in with username) created 
 CREATE TABLE IF NOT EXISTS admins (
   admin_id INT AUTO_INCREMENT PRIMARY KEY,
   full_name VARCHAR(100) NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS admins (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Guests (log in with email)
+-- Guests (log in with email) created
 CREATE TABLE IF NOT EXISTS guests (
   guest_id INT AUTO_INCREMENT PRIMARY KEY,
   full_name VARCHAR(100) NOT NULL,

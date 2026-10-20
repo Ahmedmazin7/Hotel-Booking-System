@@ -1,0 +1,100 @@
+/* Styles only used on Admin/rooms.php */
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+/* ---------- rooms list (same look as "Today's arrivals") ---------- */
+
+.room-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px;
+  border-top: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.room-item:first-child {
+  border-top: 0;
+}
+
+/* highlight the room that is open in the form */
+.room-item.editing {
+  background: rgba(18, 122, 114, 0.07);
+}
+
+.room-badge {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal-dark);
+  background: var(--teal-soft);
+  border-radius: 999px;
+}
+
+.room-badge.maintenance {
+  color: #b4432f;
+  background: #fbe1dc;
+}
+
+.room-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.room-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.room-meta {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.room-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.room-actions form {
+  margin: 0;
+}
+
+/* ---------- smaller screens ---------- */
+
+@media (max-width: 960px) {
+  .rooms-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .room-item {
+    flex-wrap: wrap;
+  }
+
+  /* badge + details fill the first line, so status and buttons drop under them */
+  .room-info {
+    flex-basis: calc(100% - 52px);
+  }
+
+  .room-item .badge {
+    margin-left: 52px;
+  }
+
+  .room-actions {
+    margin-left: auto;
+  }
+}

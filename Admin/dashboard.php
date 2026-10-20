@@ -132,8 +132,8 @@ include '../includes/header.php';
             </tr>
             <?php while ($row = mysqli_fetch_assoc($recent_bookings)) { ?>
               <tr>
-                <td class="id"><?php echo $row['booking_id']; ?></td>
-                <td class="guest"><?php echo htmlspecialchars($row['full_name']); ?></td>
+                <td class="muted"><?php echo $row['booking_id']; ?></td>
+                <td class="strong"><?php echo htmlspecialchars($row['full_name']); ?></td>
                 <td><?php echo htmlspecialchars($row['room_number'] . ' ' . $row['room_type']); ?></td>
                 <td><?php echo date('d M', strtotime($row['check_in'])); ?></td>
                 <td><?php echo date('d M', strtotime($row['check_out'])); ?></td>

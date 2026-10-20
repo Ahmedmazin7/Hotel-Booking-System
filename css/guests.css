@@ -1,0 +1,157 @@
+/* Styles only used on Admin/guests.php */
+
+.guests-grid {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.hint {
+  margin: -6px 0 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- search ---------- */
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.search-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.search-form input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(18, 122, 114, 0.15);
+}
+
+.search-form .btn-small {
+  padding: 7px 12px;
+}
+
+.search-form .clear {
+  color: var(--muted);
+  background: #e5ebea;
+}
+
+/* ---------- guests list (same look as "Today's arrivals") ---------- */
+
+.guest-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-top: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.guest-item:first-child {
+  border-top: 0;
+}
+
+/* highlight the guest that is open in the form */
+.guest-item.editing {
+  background: rgba(18, 122, 114, 0.07);
+}
+
+.guest-avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal-dark);
+  background: var(--teal-soft);
+  border-radius: 50%;
+}
+
+.guest-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.guest-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.guest-meta {
+  display: block;
+  overflow: hidden;
+  font-size: 12.5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--muted);
+}
+
+.guest-stats {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.guest-bookings {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.guest-joined {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.guest-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.guest-actions form {
+  margin: 0;
+}
+
+/* ---------- smaller screens ---------- */
+
+@media (max-width: 960px) {
+  .guests-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .guest-item {
+    flex-wrap: wrap;
+  }
+
+  /* avatar + details fill the first line, the rest drops under them */
+  .guest-info {
+    flex-basis: calc(100% - 52px);
+  }
+
+  .guest-stats {
+    margin-left: 52px;
+    text-align: left;
+  }
+
+  .guest-actions {
+    margin-left: auto;
+  }
+}
