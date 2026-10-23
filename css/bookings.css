@@ -1,0 +1,202 @@
+/* Styles only used on Admin/bookings.php */
+
+.bookings-grid {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.hint {
+  margin: -4px 0 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* guest and room shown as text when editing */
+.fixed-info {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  background: rgba(18, 122, 114, 0.06);
+  border-radius: 9px;
+}
+
+.fixed-value {
+  display: block;
+  margin: 2px 0 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.fixed-value:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- filters ---------- */
+
+.filter-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.filter-form input {
+  min-width: 0;
+  padding: 7px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.filter-form input[type="search"] {
+  flex: 1;
+}
+
+.filter-form input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(18, 122, 114, 0.15);
+}
+
+.filter-form .btn-small {
+  padding: 7px 12px;
+}
+
+.filter-form .clear {
+  color: var(--muted);
+  background: #e5ebea;
+}
+
+/* ---------- bookings list (same look as "Today's arrivals") ---------- */
+
+.booking-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-top: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.booking-item:first-child {
+  border-top: 0;
+}
+
+/* highlight the booking that is open in the form */
+.booking-item.editing {
+  background: rgba(18, 122, 114, 0.07);
+}
+
+.booking-avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal-dark);
+  background: var(--teal-soft);
+  border-radius: 50%;
+}
+
+.booking-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.booking-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.booking-id {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.booking-meta {
+  display: block;
+  overflow: hidden;
+  font-size: 12.5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--muted);
+}
+
+.booking-total {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.booking-price {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.booking-nights {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.booking-item .badge {
+  min-width: 96px;
+  text-align: center;
+}
+
+.booking-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.booking-actions form {
+  margin: 0;
+}
+
+/* ---------- smaller screens ---------- */
+
+@media (max-width: 960px) {
+  .bookings-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .filter-form {
+    flex-wrap: wrap;
+  }
+
+  .filter-form input[type="search"] {
+    flex-basis: 100%;
+  }
+
+  .booking-item {
+    flex-wrap: wrap;
+  }
+
+  /* avatar + details fill the first line, the rest drops under them */
+  .booking-info {
+    flex-basis: calc(100% - 52px);
+  }
+
+  .booking-total {
+    margin-left: 52px;
+    text-align: left;
+  }
+
+  .booking-item .badge {
+    min-width: 0;
+  }
+
+  .booking-actions {
+    margin-left: auto;
+  }
+}

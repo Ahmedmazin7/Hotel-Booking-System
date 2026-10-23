@@ -320,8 +320,16 @@ td.actions form {
 
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 10px;
+}
+
+/* date inputs have a built-in minimum width, so let them shrink */
+.form input[type="date"] {
+  min-width: 0;
+  padding-right: 6px;
+  padding-left: 8px;
+  font-size: 13px;
 }
 
 .form-actions {
