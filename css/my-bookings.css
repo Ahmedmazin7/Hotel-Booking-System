@@ -1,0 +1,115 @@
+/* Styles only used on Guest/my_bookings.php */
+
+.stay-section {
+  margin-bottom: 18px;
+}
+
+/* ---------- bookings list (same look as the admin bookings list) ---------- */
+
+.stay-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  border-top: 1px solid var(--line);
+}
+
+.stay-item:first-child {
+  border-top: 0;
+}
+
+/* room number in a rounded square */
+.stay-room {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal-dark);
+  background: var(--teal-soft);
+  border-radius: 12px;
+}
+
+.stay-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.stay-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stay-id {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.stay-dates {
+  display: block;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.stay-total {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.stay-price {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.stay-nights {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.stay-item .badge {
+  min-width: 96px;
+  text-align: center;
+}
+
+/* keeps the badges lined up even when there is no Cancel button */
+.stay-actions {
+  width: 62px;
+  text-align: right;
+}
+
+.stay-actions form {
+  margin: 0;
+}
+
+/* ---------- phones ---------- */
+
+@media (max-width: 560px) {
+  .stay-item {
+    flex-wrap: wrap;
+  }
+
+  /* room + details fill the first line, the rest drops under them */
+  .stay-info {
+    flex-basis: calc(100% - 56px);
+  }
+
+  .stay-total {
+    margin-left: 56px;
+    text-align: left;
+  }
+
+  .stay-item .badge {
+    min-width: 0;
+  }
+
+  .stay-actions {
+    width: auto;
+    margin-left: auto;
+  }
+}

@@ -9,7 +9,7 @@ $admin_name = $_SESSION['admin_name'];
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?php echo htmlspecialchars($page_title); ?> · StayEase</title>
+  <title><?php echo htmlspecialchars($page_title); ?> · Stayeaase</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
@@ -23,7 +23,7 @@ $admin_name = $_SESSION['admin_name'];
 <div class="shell">
 
   <aside class="sidebar">
-    <a href="/HMS-Project/Admin/dashboard.php" class="brand">Stay<span>Ease</span></a>
+    <a href="/HMS-Project/Admin/dashboard.php" class="brand">Stay<span>ease</span></a>
 
     <nav class="side-nav">
       <a href="/HMS-Project/Admin/dashboard.php" class="<?php if ($current_page == 'dashboard.php') echo 'active'; ?>">

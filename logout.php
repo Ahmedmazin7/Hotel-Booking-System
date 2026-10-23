@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// remember who was logged in so we send them to the right login page
+// remember who was logged in so we send them to the right page
 $was_admin = isset($_SESSION['admin_id']);
 
 // clear the session
@@ -11,7 +11,7 @@ session_destroy();
 if ($was_admin) {
     header("Location: Admin/login.php");
 } else {
-    header("Location: Guest/login.php");
+    header("Location: Guest/rooms.php");
 }
 exit;
 ?>
