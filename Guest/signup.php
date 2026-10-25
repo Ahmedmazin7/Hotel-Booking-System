@@ -50,6 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+$side_title = 'Your next stay starts here';
+$side_text = 'Create a free account to book rooms and manage your bookings in one place.';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,40 +60,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sign up · StayEase</title>
-  <link rel="stylesheet" href="/HMS-Project/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/HMS-Project/css/guest-auth.css">
 </head>
 <body>
-  <div class="card">
-    <h1>Sign up</h1>
+  <div class="auth">
+    <?php include '../includes/guest_auth_side.php'; ?>
 
-    <?php if ($error): ?>
-      <p class="message error"><?= htmlspecialchars($error) ?></p>
-    <?php endif; ?>
+    <main class="auth-form">
+      <a href="rooms.php" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Browse rooms
+      </a>
 
-    <?php if ($success): ?>
-      <p class="message success"><?= htmlspecialchars($success) ?> <a href="login.php">Log in</a></p>
-    <?php endif; ?>
+      <h1>Create account</h1>
+      <p class="subtitle">It only takes a minute</p>
 
-    <form action="signup.php" method="post">
-      <label for="full_name">Full name</label>
-      <input type="text" id="full_name" name="full_name" value="<?= htmlspecialchars($full_name) ?>" required>
+      <?php if ($error): ?>
+        <p class="message error"><?= htmlspecialchars($error) ?></p>
+      <?php endif; ?>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" value="<?= htmlspecialchars($email) ?>" required>
+      <?php if ($success): ?>
+        <p class="message success"><?= htmlspecialchars($success) ?> <a href="login.php">Log in</a></p>
+      <?php endif; ?>
 
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" value="<?= htmlspecialchars($phone) ?>" required>
+      <form action="signup.php" method="post">
+        <label for="full_name">Full name</label>
+        <input type="text" id="full_name" name="full_name" value="<?= htmlspecialchars($full_name) ?>" required>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" minlength="8" required>
+        <div class="form-row">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" value="<?= htmlspecialchars($email) ?>" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="03001234567" value="<?= htmlspecialchars($phone) ?>" required>
+          </div>
+        </div>
 
-      <label for="confirm_password">Confirm password</label>
-      <input type="password" id="confirm_password" name="confirm_password" minlength="8" required>
+        <div class="form-row">
+          <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" minlength="8" required>
+          </div>
+          <div>
+            <label for="confirm_password">Confirm password</label>
+            <input type="password" id="confirm_password" name="confirm_password" minlength="8" required>
+          </div>
+        </div>
+        <p class="field-hint">At least 8 characters.</p>
 
-      <button type="submit">Sign up</button>
-    </form>
+        <button type="submit">Create account</button>
+      </form>
 
-    <p class="switch">Already have an account? <a href="login.php">Log in</a></p>
+      <p class="switch">Already have an account? <a href="login.php">Log in</a></p>
+    </main>
   </div>
 </body>
 </html>

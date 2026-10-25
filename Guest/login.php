@@ -51,6 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+$side_title = 'Welcome back to StayEase';
+$side_text = 'Log in to book a room and keep track of your stays.';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,32 +61,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Log in · StayEase</title>
-  <link rel="stylesheet" href="/HMS-Project/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/HMS-Project/css/guest-auth.css">
 </head>
 <body>
-  <div class="card">
-    <h1>Log in</h1>
+  <div class="auth">
+    <?php include '../includes/guest_auth_side.php'; ?>
 
-    <?php if ($error): ?>
-      <p class="message error"><?= htmlspecialchars($error) ?></p>
-    <?php endif; ?>
+    <main class="auth-form">
+      <a href="rooms.php" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Browse rooms
+      </a>
 
-    <?php if ($success): ?>
-      <p class="message success"><?= htmlspecialchars($success) ?></p>
-    <?php endif; ?>
+      <h1>Log in</h1>
+      <p class="subtitle">Use the email you signed up with</p>
 
-    <form action="login.php" method="post">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" value="<?= htmlspecialchars($email) ?>" required>
+      <?php if ($error): ?>
+        <p class="message error"><?= htmlspecialchars($error) ?></p>
+      <?php endif; ?>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+      <?php if ($success): ?>
+        <p class="message success"><?= htmlspecialchars($success) ?></p>
+      <?php endif; ?>
 
-      <button type="submit">Log in</button>
-    </form>
+      <form action="login.php" method="post">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" value="<?= htmlspecialchars($email) ?>" required>
 
-    <p class="switch">Don't have an account? <a href="signup.php">Sign up</a></p>
-    <p class="switch"><a href="rooms.php">Browse rooms</a></p>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Log in</button>
+      </form>
+
+      <p class="switch">Don't have an account? <a href="signup.php">Sign up</a></p>
+    </main>
   </div>
 </body>
 </html>

@@ -174,7 +174,7 @@ include '../includes/header.php';
 
       <div class="form-row">
         <div>
-          <label for="price">Price / night ($)</label>
+          <label for="price">Price / night (MVR)</label>
           <input type="number" id="price" name="price" min="0.01" max="99999" step="0.01" value="<?php echo htmlspecialchars($price); ?>" required>
         </div>
         <div>
@@ -220,7 +220,7 @@ include '../includes/header.php';
                 <?php echo $row['capacity']; ?> <?php echo $row['capacity'] == 1 ? 'guest' : 'guests'; ?>
               </span>
               <span class="room-meta">
-                $<?php echo number_format($row['price_per_night'], 2); ?> / night ·
+                MVR <?php echo number_format($row['price_per_night'], 2); ?> / night ·
                 <?php echo $row['total_bookings']; ?> <?php echo $row['total_bookings'] == 1 ? 'booking' : 'bookings'; ?>
               </span>
             </div>

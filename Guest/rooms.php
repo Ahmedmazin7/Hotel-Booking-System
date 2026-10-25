@@ -231,7 +231,7 @@ include '../includes/guest_header.php';
           </div>
 
           <p class="room-price">
-            $<?php echo number_format($room['price_per_night'], 2); ?>
+            MVR <?php echo number_format($room['price_per_night'], 2); ?>
             <span class="muted">/ night</span>
           </p>
           <p class="room-capacity muted">
@@ -241,11 +241,11 @@ include '../includes/guest_header.php';
           <?php if ($has_dates) { ?>
             <div class="room-total">
               <span class="small-label">Total for <?php echo $nights; ?> <?php echo $nights == 1 ? 'night' : 'nights'; ?></span>
-              <span class="room-total-price">$<?php echo number_format($nights * $room['price_per_night'], 2); ?></span>
+              <span class="room-total-price">MVR <?php echo number_format($nights * $room['price_per_night'], 2); ?></span>
             </div>
 
             <form action="rooms.php?<?php echo htmlspecialchars(http_build_query(array('check_in' => $check_in, 'check_out' => $check_out, 'room_type' => $room_type))); ?>" method="post"
-                  onsubmit="return confirm('Book room <?php echo htmlspecialchars($room['room_number']); ?> for $<?php echo number_format($nights * $room['price_per_night'], 2); ?>?');">
+                  onsubmit="return confirm('Book room <?php echo htmlspecialchars($room['room_number']); ?> for MVR <?php echo number_format($nights * $room['price_per_night'], 2); ?>?');">
               <input type="hidden" name="room_id" value="<?php echo $room['room_id']; ?>">
               <input type="hidden" name="check_in" value="<?php echo htmlspecialchars($check_in); ?>">
               <input type="hidden" name="check_out" value="<?php echo htmlspecialchars($check_out); ?>">

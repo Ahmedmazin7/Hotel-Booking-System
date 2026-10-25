@@ -208,7 +208,7 @@ include '../includes/header.php';
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </span>
         <span class="small-label">Revenue, <?php echo date('F'); ?></span>
-        <span class="stat-value">$<?php echo number_format($revenue_month); ?></span>
+        <span class="stat-value">MVR <?php echo number_format($revenue_month); ?></span>
       </div>
     </div>
 

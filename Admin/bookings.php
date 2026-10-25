@@ -260,7 +260,7 @@ include '../includes/header.php';
           <option value="">Choose a room</option>
           <?php while ($r = mysqli_fetch_assoc($available_rooms)) { ?>
             <option value="<?php echo $r['room_id']; ?>" <?php if ($room_id == $r['room_id']) echo 'selected'; ?>>
-              <?php echo htmlspecialchars($r['room_number'] . ' · ' . $r['room_type'] . ' · $' . number_format($r['price_per_night'], 2) . ' / night'); ?>
+              <?php echo htmlspecialchars($r['room_number'] . ' · ' . $r['room_type'] . ' · MVR ' . number_format($r['price_per_night'], 2) . ' / night'); ?>
             </option>
           <?php } ?>
         </select>
@@ -270,7 +270,7 @@ include '../includes/header.php';
           <span class="fixed-value"><?php echo htmlspecialchars($editing['full_name']); ?></span>
           <span class="small-label">Room</span>
           <span class="fixed-value">
-            <?php echo htmlspecialchars($editing['room_number'] . ' · ' . $editing['room_type'] . ' · $' . number_format($editing['price_per_night'], 2) . ' / night'); ?>
+            <?php echo htmlspecialchars($editing['room_number'] . ' · ' . $editing['room_type'] . ' · MVR ' . number_format($editing['price_per_night'], 2) . ' / night'); ?>
           </span>
         </div>
       <?php } ?>
@@ -342,7 +342,7 @@ include '../includes/header.php';
             </div>
 
             <div class="booking-total">
-              <span class="booking-price">$<?php echo number_format($row['total_price'], 2); ?></span>
+              <span class="booking-price">MVR <?php echo number_format($row['total_price'], 2); ?></span>
               <span class="booking-nights"><?php echo $nights; ?> <?php echo $nights == 1 ? 'night' : 'nights'; ?></span>
             </div>
 

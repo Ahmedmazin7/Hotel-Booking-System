@@ -129,7 +129,7 @@ $sections = array(
             </div>
 
             <div class="stay-total">
-              <span class="stay-price">$<?php echo number_format($row['total_price'], 2); ?></span>
+              <span class="stay-price">MVR <?php echo number_format($row['total_price'], 2); ?></span>
               <span class="stay-nights"><?php echo $nights; ?> <?php echo $nights == 1 ? 'night' : 'nights'; ?></span>
             </div>
 
