@@ -50,9 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-
-$side_title = 'Your next stay starts here';
-$side_text = 'Create a free account to book rooms and manage your bookings in one place.';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,8 +64,6 @@ $side_text = 'Create a free account to book rooms and manage your bookings in on
 </head>
 <body>
   <div class="auth">
-    <?php include '../includes/guest_auth_side.php'; ?>
-
     <main class="auth-form">
       <a href="rooms.php" class="back-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>

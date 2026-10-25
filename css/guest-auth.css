@@ -25,111 +25,18 @@ body {
   background: linear-gradient(135deg, #c9e1de 0%, #dce9e7 50%, #dcd9ef 100%);
 }
 
-/* ---------- two-panel card ---------- */
+/* ---------- card ---------- */
 
 .auth {
-  display: grid;
-  grid-template-columns: 5fr 6fr;
   width: 100%;
-  max-width: 900px;
-  overflow: hidden;
+  max-width: 480px;
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 28px;
   box-shadow: 0 30px 60px rgba(20, 60, 56, 0.12);
 }
 
-/* ---------- left: welcome panel ---------- */
-
-.auth-side {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 40px 36px;
-  overflow: hidden;
-  color: #fff;
-  background: linear-gradient(160deg, #127a72 0%, #0e5f5a 60%, #0b4a46 100%);
-}
-
-/* soft circles in the corners for a bit of depth */
-.auth-side::before,
-.auth-side::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.07);
-}
-
-.auth-side::before {
-  top: -90px;
-  right: -90px;
-  width: 260px;
-  height: 260px;
-}
-
-.auth-side::after {
-  bottom: -120px;
-  left: -60px;
-  width: 300px;
-  height: 300px;
-}
-
-.auth-side > * {
-  position: relative;
-}
-
-.brand {
-  font-size: 24px;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
-}
-
-.brand span {
-  font-weight: 400;
-  color: #a9dcd5;
-}
-
-.side-title {
-  margin: auto 0 10px;
-  padding-top: 48px;
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.3px;
-}
-
-.side-text {
-  margin: 0 0 26px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.perks {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.perks li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-  font-size: 13.5px;
-}
-
-.perks svg {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  padding: 7px;
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: 10px;
-}
-
-/* ---------- right: form ---------- */
+/* ---------- form ---------- */
 
 .auth-form {
   padding: 44px 44px 36px;
@@ -258,30 +165,9 @@ button:hover {
   height: 15px;
 }
 
-/* ---------- tablets and phones ---------- */
+/* ---------- phones ---------- */
 
-@media (max-width: 760px) {
-  .auth {
-    grid-template-columns: minmax(0, 1fr);
-    max-width: 460px;
-  }
-
-  /* keep only the brand and title on top, hide the long text */
-  .auth-side {
-    padding: 26px 28px;
-  }
-
-  .side-title {
-    margin: 14px 0 0;
-    padding-top: 0;
-    font-size: 20px;
-  }
-
-  .side-text,
-  .perks {
-    display: none;
-  }
-
+@media (max-width: 520px) {
   .auth-form {
     padding: 28px 28px 30px;
   }

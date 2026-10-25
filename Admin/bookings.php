@@ -293,8 +293,6 @@ include '../includes/header.php';
         <?php } ?>
       </select>
 
-      <p class="hint">The total is worked out automatically: nights × price per night.</p>
-
       <div class="form-actions">
         <button type="submit" name="save" class="btn-primary"><?php echo $booking_id == 0 ? 'Create booking' : 'Save changes'; ?></button>
         <?php if ($booking_id != 0) { ?>
